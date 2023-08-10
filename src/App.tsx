@@ -6,6 +6,7 @@ import { Product } from "./models/product";
 import { v4 as uuidv4 } from "uuid";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Home from "./pages/Home/Home";
 
 const product: Product = {
   id: uuidv4(),
@@ -22,7 +23,7 @@ function App() {
         <BrowserRouter>
           <Header />
           <Routes>
-            {/* <Route path='/' element={<Home />} /> */}
+            {<Route path='/' element={<Home />} />}
             {/* <Route path='/*' element={<NotFound />} /> */}
           </Routes>
         </BrowserRouter>
