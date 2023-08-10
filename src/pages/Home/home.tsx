@@ -64,9 +64,6 @@ export default function Home() {
           <CardProduct key={product.id} product={product} />
         ))}
       </section>
-      <section>
-        <h1>RENDERIZAÇÃO PRODUTOS</h1>
-      </section>
       <section className="avaliacoes">
         <h2>Avaliações</h2>
         <div>
