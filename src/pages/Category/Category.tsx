@@ -21,8 +21,8 @@ export default function Category() {
 
   return (
     <>
-      <h1>{tag}</h1>
       <section className="product-section">
+        <h1>{tag}</h1>
         {products.map((product) => (
           <CardProduct key={product.id} product={product} />
         ))}
