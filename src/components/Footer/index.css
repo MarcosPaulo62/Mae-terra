@@ -20,4 +20,5 @@ footer button{
     text-decoration: underline;
     font-size: 0.75rem;
     padding: 6px 12px 1px;
+    cursor: pointer;
 }
