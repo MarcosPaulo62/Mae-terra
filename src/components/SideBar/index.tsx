@@ -20,10 +20,10 @@ export default function SideBar({ active }: SideBarProps){
                 </div>
                 <div className="links">
                     <Link to='/'>Home</Link>
-                    <Link to='/'>Aventura</Link>
-                    <Link to='/'>Camping</Link>
-                    <Link to='/'>Mochilas</Link>
-                    <Link to='/'>Tênis</Link>
+                    <Link to='/category/aventura'>Aventura</Link>
+                    <Link to='/category/camping'>Camping</Link>
+                    <Link to='/category/mochilas'>Mochilas</Link>
+                    <Link to='/category/tenis'>Tênis</Link>
                 </div>            
             </div>
         </div>

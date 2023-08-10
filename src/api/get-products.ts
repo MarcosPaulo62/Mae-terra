@@ -1,6 +1,7 @@
+import { Product } from "../models/product";
 
 const url = `https://my-json-server.typicode.com/MarcosPaulo62/mae-terra-react/produtos`
-export const getProducts = () => {
+export const getProducts = (): Promise<Product[]> => {
 
     const headers = new Headers();
     headers.append("Content-type", "application/json");
