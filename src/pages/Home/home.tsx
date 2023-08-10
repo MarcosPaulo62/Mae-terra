@@ -1,13 +1,26 @@
 import { useState } from 'react';
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import './home.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import ModalAvaliacao from '../../components/ModalAvaliacao';
 
+interface avaliacao{
+    mensagem: string,
+    nome: string
+}
+
 export default function Home(){
     const [modal, setModal] = useState<boolean>(false);
 
     const showModal = () => setModal(!modal);
+
+    const [avaliacoes, setAvaliacoes] = useState<avaliacao[]>([
+        {mensagem: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been', nome: 'Ana Banana'},
+        {mensagem: 'Lorem Ipsum is and typesetting industry. Lorem Ipsum has been', nome: 'Pafúncio'},
+        {mensagem: 'Lorem Ipsum is and typesetting industry. Lorem Ipsum has been typesetting industry. Lorem Ipsum', nome: 'Lorem'},
+    ])
 
     return(
         <main className='home'>
@@ -29,10 +42,22 @@ export default function Home(){
             <section className='avaliacoes'>
                 <h2>Avaliações</h2>
                 <div>
-                    <h4>carousel</h4>
-                    <h4>carousel</h4>
-                    <h4>carousel</h4>
-                    <h4>carousel</h4>
+                <Carousel 
+                    autoPlay 
+                    infiniteLoop 
+                    showArrows={false} 
+                    showStatus={false} 
+                    showThumbs={false} 
+                    showIndicators={false} 
+                    interval={4000}
+                >                    
+                    {avaliacoes.map((item) => (
+                        <div className='carousel-item'>
+                            <p>"{item.mensagem}"</p>
+                            <p>{item.nome}</p>
+                        </div>
+                    ))}                    
+                </Carousel>
                 </div>
                 <button onClick={showModal}>
                     Avalie-nos!
