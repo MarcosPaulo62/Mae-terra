@@ -46,28 +46,25 @@
     justify-content: flex-end;
 }
 
-.modal-avaliacao-content .modal-body{
-    padding: 1rem 1rem 2rem;
-}
-
-.modal-avaliacao-content .modal-body form{
+.modal-avaliacao-content .modal-body .form{
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    padding: 0 1rem;
 }
 
-.modal-avaliacao-content .modal-body form div{
+.modal-avaliacao-content .modal-body .form div{
     display: flex;
     flex-direction: column;
     text-align: center;
 }
 
-.modal-avaliacao-content .modal-body form label{
+.modal-avaliacao-content .modal-body .form label{
     font-size: 1rem;
     padding: 0.5rem 0;
 }
 
-.modal-avaliacao-content .modal-body form input, .modal-avaliacao-content .modal-body form textarea{
+.modal-avaliacao-content .modal-body .form input, .modal-avaliacao-content .modal-body .form textarea{
     display: block;
     width: 100%;
     padding: 0.3rem 0.7rem;
@@ -77,11 +74,13 @@
 }
 
 .modal-avaliacao-content .modal-footer{
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     padding: 0.7rem;
     border-top: 1px solid #dee2e6;
+    margin-top: 2rem;
 }
 
 .modal-avaliacao-content .modal-footer button{
