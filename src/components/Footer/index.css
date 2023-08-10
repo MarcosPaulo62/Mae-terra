@@ -1,0 +1,23 @@
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-color: rgba(139, 107, 87, 0.80);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.40) inset;
+    color: var(--black);
+    width: 100%;
+    padding: 1.3rem;
+}
+
+footer p{
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+footer button{
+    background-color: transparent;
+    border: none !important;
+    text-decoration: underline;
+    font-size: 0.75rem;
+    padding: 6px 12px 1px;
+}
