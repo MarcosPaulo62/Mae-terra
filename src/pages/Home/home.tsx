@@ -9,7 +9,7 @@ import { CardProduct } from "../../components/CardProduct";
 import { v4 as uuidv4 } from "uuid";
 import { Product } from "../../models/product";
 
-interface avaliacao{
+export interface avaliacao{
     mensagem: string,
     nome: string
 }
@@ -32,6 +32,10 @@ export default function Home(){
         {mensagem: 'Lorem Ipsum is and typesetting industry. Lorem Ipsum has been typesetting industry. Lorem Ipsum', nome: 'Lorem'},
     ])
 
+    function handleAddAvaliacao(avaliacao: avaliacao){
+        setAvaliacoes(prevItens => [...prevItens, avaliacao]);
+    }
+
     return(
         <main className='home'>
             <section className="main-hero">
@@ -47,17 +51,14 @@ export default function Home(){
                 </button>
             </section>
             <section className="product-section">
-          <CardProduct product={product} />
-          <CardProduct product={product} />
-          <CardProduct product={product} />
-          <CardProduct product={product} />
-          <CardProduct product={product} />
-          <CardProduct product={product} />
-          <CardProduct product={product} />
-          <CardProduct product={product} />
-        </section>
-            <section>
-                <h1>RENDERIZAÇÃO PRODUTOS</h1>
+                <CardProduct product={product} />
+                <CardProduct product={product} />
+                <CardProduct product={product} />
+                <CardProduct product={product} />
+                <CardProduct product={product} />
+                <CardProduct product={product} />
+                <CardProduct product={product} />
+                <CardProduct product={product} />
             </section>
             <section className='avaliacoes'>
                 <h2>Avaliações</h2>
@@ -82,7 +83,7 @@ export default function Home(){
                 <button onClick={showModal}>
                     Avalie-nos!
                 </button>
-                {modal && <ModalAvaliacao active={setModal} />}
+                {modal && <ModalAvaliacao active={setModal} onAddAvaliacao={(avaliacao) => handleAddAvaliacao(avaliacao)} />}
             </section>
         </main>
     )
