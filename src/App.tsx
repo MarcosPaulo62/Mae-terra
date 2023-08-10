@@ -26,9 +26,17 @@ function App() {
             {/* <Route path='/*' element={<NotFound />} /> */}
           </Routes>
         </BrowserRouter>
-
+        <div className="product-section">
         <CardProduct product={product} />
         <CardProduct product={product} />
+        <CardProduct product={product} />
+        <CardProduct product={product} />
+        <CardProduct product={product} />
+        <CardProduct product={product} />
+        <CardProduct product={product} />
+        <CardProduct product={product} />
+        </div>
+        
         
         <Footer />
       </div>
