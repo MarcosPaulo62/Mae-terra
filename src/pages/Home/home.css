@@ -13,7 +13,7 @@
     justify-content: center;
     align-items: center;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.60) inset;
-    background-image: url(../../../public/img-hero.jpg);
+    background-image: url(../../../public/img-hero-desktop.jpg);
     background-size: cover;
     background-position: center;
 }
@@ -28,13 +28,14 @@
 .main-hero div h1{
     font-size: 2rem;
     font-weight: normal;
-    color: #FFF;
+    color: var(--white);
     text-transform: uppercase;
     font-family: "Hammersmith One", sans-serif;
 }
 
 .main-hero p{
-    color: #FFF;
+    color: var(--white);
+    font-family: var(--primary-font);
     font-size: 1.2rem;
     font-weight: 600;
 }
@@ -44,4 +45,66 @@
     justify-content: center;
     align-items: center;
     gap: 0;
+    width: 60%;
+    max-width: 25rem;
+    margin: 0 auto;
+}
+
+.home .search-container input{
+    background-color: transparent;
+    border-radius: 4px;
+    border: 1px solid var(--black);
+    height: 2.125rem;
+    padding: 0 0.5rem;
+    outline: none;
+    color: rgba(0, 0, 0, 0.71);
+    font-size: 0.625rem;
+    font-weight: 500;
+    width: 100%;
+}
+
+.home .search-container button{
+    background-color: transparent;
+    border-radius: 4px;
+    border: 1px solid var(--black);
+    height: 2.125rem;
+    width: 2.125rem;
+    color: rgba(0, 0, 0, 0.71);
+    min-width: 2.125rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.avaliacoes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+.avaliacoes h2{
+    color: var(--white);
+    font-family: var(--secondary-font);
+    border-bottom: 2px solid var(--secondary);
+    width: 40%;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+.avaliacoes button{
+    color: var(--white);
+    cursor: pointer;
+    min-width: 100px;
+    max-width: 200px;
+    align-self: center;
+    margin-bottom: 15px;
+    background-color: var(--secondary);
+    border: none;
+    border-radius: 4px;
+    font-family: var(--secondary-font);
+    padding: 0.5rem 0.8rem;
+    font-size: 1rem;
 }
