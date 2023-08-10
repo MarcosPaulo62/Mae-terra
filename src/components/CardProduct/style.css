@@ -1,0 +1,23 @@
+:root{
+    --primary: #8B6B57;
+    --primary-hover: #634d40;
+    --secondary: #355d4c;
+    --secondary-hover: #1e342b;
+    --white: #fff;
+}
+.btn-add{
+    all: unset;
+    background-color: #8B6B57;
+    color: var(--white);
+    padding: 0.25rem 1rem;
+    display: flex;
+    justify-content: center;
+    border-radius: 4px;
+}
+.btn-add:hover{
+    background-color: var(--primary-hover);
+
+}
+.product{
+
+}
