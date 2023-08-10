@@ -5,11 +5,21 @@ import './home.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import ModalAvaliacao from '../../components/ModalAvaliacao';
+import { CardProduct } from "../../components/CardProduct";
+import { v4 as uuidv4 } from "uuid";
+import { Product } from "../../models/product";
 
 interface avaliacao{
     mensagem: string,
     nome: string
 }
+const product: Product = {
+    id: uuidv4(),
+    category: "Mochilas",
+    img: "../public/mochila-cargueira-card.png",
+    name: "Mochila preta",
+    price: 120,
+  };
 
 export default function Home(){
     const [modal, setModal] = useState<boolean>(false);
@@ -36,6 +46,16 @@ export default function Home(){
                     <FontAwesomeIcon icon={faMagnifyingGlass} />
                 </button>
             </section>
+            <section className="product-section">
+          <CardProduct product={product} />
+          <CardProduct product={product} />
+          <CardProduct product={product} />
+          <CardProduct product={product} />
+          <CardProduct product={product} />
+          <CardProduct product={product} />
+          <CardProduct product={product} />
+          <CardProduct product={product} />
+        </section>
             <section>
                 <h1>RENDERIZAÇÃO PRODUTOS</h1>
             </section>
