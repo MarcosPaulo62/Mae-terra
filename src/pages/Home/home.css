@@ -82,6 +82,8 @@
     flex-direction: column;
     align-items: center;
     gap: 3rem;
+    max-width: 100vw;
+    overflow-x: hidden;
 }
 
 .avaliacoes h2{

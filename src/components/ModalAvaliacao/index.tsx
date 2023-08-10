@@ -1,12 +1,32 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import './index.css';
+import { avaliacao } from "../../pages/Home/Home";
+import { useForm } from 'react-hook-form';
+
+interface FormData {
+    nome: string;
+    mensagem: string;
+}
 
 interface ModalProps{
     active: (modal: boolean) => void;
+    onAddAvaliacao: (avaliacao: avaliacao) => void;
 }
 
-export default function ModalAvaliacao({ active }: ModalProps){
+export default function ModalAvaliacao({ active, onAddAvaliacao }: ModalProps){
+    const { register, handleSubmit } = useForm<FormData>();
+
+    const onSubmit = (data: FormData) => {
+        const novaAvaliacao: avaliacao = {
+            nome: data.nome,
+            mensagem: data.mensagem
+        }
+        onAddAvaliacao(novaAvaliacao);
+        
+        closeModal();
+    };
+
     const closeModal = () =>{
         active(false);
     }
@@ -21,21 +41,25 @@ export default function ModalAvaliacao({ active }: ModalProps){
                     </button>
                 </div>
                 <div className="modal-body">    
-                    <form>
-                        <div>
-                            <label htmlFor="nome">Seu nome</label>
-                            <input type="text" id="nome" required></input>
+                    <form onSubmit={handleSubmit(onSubmit)}>
+                        <div className="form">
+                            <div>
+                                <label htmlFor="nome">Seu nome</label>
+                                <input type="text" id="nome" {...register("nome")} required></input>
+                            </div>
+                            <div>
+                                <label htmlFor="mensagem">Avaliação</label>
+                                <textarea id="mensagem" maxLength={100} {...register("mensagem")} required></textarea>
+                            </div>
                         </div>
-                        <div>
-                            <label htmlFor="mensagem">Avaliação</label>
-                            <textarea id="mensagem" maxLength={150} required></textarea>
+                        
+                
+                        <div className="modal-footer">
+                            <button type="button" onClick={closeModal}>Fechar</button>
+                            <button type="submit" className="enviar-modal">Avaliar!</button>
                         </div>
-                    </form>
-                </div>
-                <div className="modal-footer">
-                    <button type="button" onClick={closeModal}>Fechar</button>
-                    <button type="button" className="enviar-modal">Avaliar!</button>
-                </div>                
+                    </form>   
+                </div>             
             </div>
         </div>
     )
