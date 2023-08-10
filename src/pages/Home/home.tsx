@@ -15,6 +15,7 @@ interface avaliacao{
 }
 
 export default function Home() {
+  const [searchText, setSearchText] = useState('')
   const [products, setProducts] = useState<Product[]>([]);
 
   const [modal, setModal] = useState<boolean>(false);
@@ -54,13 +55,15 @@ export default function Home() {
         </div>
       </section>
       <section className="search-container">
-        <input type="text" placeholder="Pesquise um produto" />
+        <input type="text" placeholder="Pesquise um produto" onChange={(e) => setSearchText(e.target.value)} />
         <button>
           <FontAwesomeIcon icon={faMagnifyingGlass} />
         </button>
       </section>
       <section className="product-section">
-        {products.map((product) => (
+        {products
+          .filter((product) => product.nome.toLowerCase().includes(searchText.toLowerCase()))
+          .map((product) => (
           <CardProduct key={product.id} product={product} />
         ))}
       </section>
@@ -84,8 +87,8 @@ export default function Home() {
             ))}
           </Carousel>
         </div>
-        {/* <button onClick={showModal}>Avalie-nos!</button>
-        {modal && <ModalAvaliacao active={setModal} />} */}
+        <button onClick={showModal}>Avalie-nos!</button>
+        {/* {modal && <ModalAvaliacao active={setModal} />} */}
       </section>
     </main>
   );

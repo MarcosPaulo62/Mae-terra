@@ -1,10 +1,9 @@
-import { useState } from "react";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import "./App.css";
-import { CardProduct } from "./components/CardProduct";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Home from "./pages/Home/Home";
+import Home from "./pages/Home/home";
+import Category from "./pages/Category/Category";
 
 
 
@@ -15,12 +14,10 @@ function App() {
         <BrowserRouter>
           <Header />
           <Routes>
-            {<Route path='/' element={<Home />} />}
-            {/* <Route path='/*' element={<NotFound />} /> */}
+            <Route path='/' element={<Home />} />
+            <Route path='/category/:tag' element={<Category />} />                                                                                                                    />} /> */}
           </Routes>
         </BrowserRouter>
-
-
         <Footer />
       </div>
       
