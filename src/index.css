@@ -1,7 +1,8 @@
 :root {
-  --primary: #355d4c;
-  --secondary: #8b6b57;
-  --background: #f0f0f0;
+  --primary: #8B6B57;
+  --primary-hover: #634d40;
+  --secondary: #355d4c;
+  --secondary-hover: #1e342b;
   --white: #fff;
   --black: #000;
   --black-transparent: rgba(0, 0, 0, 0.35);

@@ -19,7 +19,7 @@
 }
 
 .container-sideBar{
-    background-color: var(--primary);
+    background-color: var(--secondary);
     height: 100%;
     position: fixed;
     top: 0;
@@ -44,7 +44,7 @@
 .container-sideBar .close button{
     border: none;
     font-size: 2rem;
-    background-color: var(--primary);
+    background-color: var(--secondary);
 }
 
 .container-sideBar .links{
