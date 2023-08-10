@@ -9,15 +9,9 @@ import { CardProduct } from "../../components/CardProduct";
 import { Product } from "../../models/product";
 import { getProducts } from "../../api/get-products";
 
-<<<<<<< HEAD
-interface avaliacao {
-  mensagem: string;
-  nome: string;
-=======
-export interface avaliacao{
+interface avaliacao{
     mensagem: string,
-    nome: string
->>>>>>> 272d0b9cdc4159a3fbcb14a8e8daeb8e8a2b97b3
+    nome: string,
 }
 
 export default function Home() {
@@ -27,7 +21,6 @@ export default function Home() {
 
   const showModal = () => setModal(!modal);
 
-<<<<<<< HEAD
   const [avaliacoes, setAvaliacoes] = useState<avaliacao[]>([
     {
       mensagem:
@@ -100,61 +93,3 @@ export default function Home() {
     </main>
   );
 }
-=======
-    function handleAddAvaliacao(avaliacao: avaliacao){
-        setAvaliacoes(prevItens => [...prevItens, avaliacao]);
-    }
-
-    return(
-        <main className='home'>
-            <section className="main-hero">
-                <div>
-                    <h1>Mãe Terra</h1>
-                    <p>Compre em até 12x sem juros</p>
-                </div>
-            </section>
-            <section className='search-container'>
-                <input type="text" placeholder='Pesquise um produto' />
-                <button>
-                    <FontAwesomeIcon icon={faMagnifyingGlass} />
-                </button>
-            </section>
-            <section className="product-section">
-                <CardProduct product={product} />
-                <CardProduct product={product} />
-                <CardProduct product={product} />
-                <CardProduct product={product} />
-                <CardProduct product={product} />
-                <CardProduct product={product} />
-                <CardProduct product={product} />
-                <CardProduct product={product} />
-            </section>
-            <section className='avaliacoes'>
-                <h2>Avaliações</h2>
-                <div>
-                <Carousel 
-                    autoPlay 
-                    infiniteLoop 
-                    showArrows={false} 
-                    showStatus={false} 
-                    showThumbs={false} 
-                    showIndicators={false} 
-                    interval={4000}
-                >                    
-                    {avaliacoes.map((item) => (
-                        <div className='carousel-item'>
-                            <p>"{item.mensagem}"</p>
-                            <p>{item.nome}</p>
-                        </div>
-                    ))}                    
-                </Carousel>
-                </div>
-                <button onClick={showModal}>
-                    Avalie-nos!
-                </button>
-                {modal && <ModalAvaliacao active={setModal} onAddAvaliacao={(avaliacao) => handleAddAvaliacao(avaliacao)} />}
-            </section>
-        </main>
-    )
-}
->>>>>>> 272d0b9cdc4159a3fbcb14a8e8daeb8e8a2b97b3
