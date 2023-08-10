@@ -1,5 +1,20 @@
-* {
-  margin: 0;
-  box-sizing: border-box;
+:root {
+  --primary: #355d4c;
+  --secondary: #8b6b57;
+  --background: #f0f0f0;
+  --white: #fff;
+  --black: #000;
+  --black-transparent: rgba(0, 0, 0, 0.35);
+  --white-transparent: rgba(242, 242, 242, 0.9);
 
+  --primary-font: "Roboto", sans-serif;
+  --secondary-font: "Hammersmith One", sans-serif;
+  --font-awesome: "FontAwesome";
+}
+
+* {
+  font-family: var(--primary-font);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
