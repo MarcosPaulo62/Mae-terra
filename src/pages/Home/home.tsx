@@ -8,20 +8,20 @@ import ModalAvaliacao from '../../components/ModalAvaliacao';
 import { CardProduct } from "../../components/CardProduct";
 import { v4 as uuidv4 } from "uuid";
 import { Product } from "../../models/product";
+import { getProducts } from '../../api/get-products';
 
 interface avaliacao{
     mensagem: string,
     nome: string
 }
-const product: Product = {
-    id: uuidv4(),
-    category: "Mochilas",
-    img: "../public/mochila-cargueira-card.png",
-    name: "Mochila preta",
-    price: 120,
-  };
 
-export default function Home(){
+
+export default async function Home(){
+    const [products, setProducts] = useState<Product[]>([]);
+    const renderProducts = await getProducts();
+    console.log(renderProducts)
+    setProducts(renderProducts);
+
     const [modal, setModal] = useState<boolean>(false);
 
     const showModal = () => setModal(!modal);
@@ -47,15 +47,10 @@ export default function Home(){
                 </button>
             </section>
             <section className="product-section">
-          <CardProduct product={product} />
-          <CardProduct product={product} />
-          <CardProduct product={product} />
-          <CardProduct product={product} />
-          <CardProduct product={product} />
-          <CardProduct product={product} />
-          <CardProduct product={product} />
-          <CardProduct product={product} />
-        </section>
+                {products.map((product) => (
+                    <CardProduct key={product.id} product={product} />
+                ))}
+            </section>
             <section>
                 <h1>RENDERIZAÇÃO PRODUTOS</h1>
             </section>

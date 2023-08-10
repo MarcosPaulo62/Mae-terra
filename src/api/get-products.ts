@@ -1,6 +1,6 @@
 
 const url = `https://my-json-server.typicode.com/MarcosPaulo62/mae-terra-react/produtos`
-export const getProduct = () => {
+export const getProducts = () => {
 
     const headers = new Headers();
     headers.append("Content-type", "application/json");
