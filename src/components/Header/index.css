@@ -1,0 +1,37 @@
+.header-container {
+    align-items: center;
+    color: var(--black);
+    display: flex;
+    height: 100%;
+    margin: 0 1.25rem;
+    justify-content: space-between;
+}
+
+.header{
+    height: 6rem;
+}
+
+.header button{
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.header .logo {
+    width: 8rem;
+    height: 4.5rem;
+    margin-right: -2.125rem;
+}
+
+.header__container__user {
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+}
+
+.header__container__user a{
+    color: black;
+    font-size: 1.2rem;
+}
+
