@@ -1,0 +1,55 @@
+
+.iconTag{
+    font-size: 3rem;
+    width: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem 0;
+}
+.titleCategory{
+    text-transform: capitalize;
+    display: flex;
+    gap: 2rem;
+    font-size: 2rem;
+    font-family: "Hammersmith One", sans-serif;
+
+}
+
+.category .search-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    width: 60%;
+    max-width: 25rem;
+    margin: 0 auto;
+}
+.category .search-container button{
+    background-color: transparent;
+    border-radius: 4px;
+    border: 1px solid var(--black);
+    height: 2.125rem;
+    width: 2.125rem;
+    color: rgba(0, 0, 0, 0.71);
+    min-width: 2.125rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.category .search-container input{
+    background-color: transparent;
+    border-radius: 4px;
+    border: 1px solid var(--black);
+    height: 2.125rem;
+    padding: 0 0.5rem;
+    outline: none;
+    color: rgba(0, 0, 0, 0.71);
+    font-size: 1rem;
+    font-weight: 500;
+    width: 100%;
+}
