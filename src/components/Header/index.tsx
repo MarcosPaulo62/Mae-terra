@@ -12,27 +12,27 @@ export default function Header() {
 
   const showSideBar = () => setSideBar(!sideBar);
 
-  return (
-    <header className="header-container header">
-      <button onClick={showSideBar}>
-        <FontAwesomeIcon icon={faBars} />
-      </button>
-      {sideBar && <SideBar active={setSideBar} />}
-      <Link to="/">
-        <img
-          src={logo}
-          alt="Desenho de uma montanha, escrito embaixo 'Mão Terra Camping Store'"
-          className="logo"
-        />
-      </Link>
-      <div className="header__container__user">
-        <Link to="/carrinho">
-          <FontAwesomeIcon icon={faCartShopping} />
-        </Link>
-        <Link to="/user">
-          <FontAwesomeIcon icon={faUser} />
-        </Link>
-      </div>
-    </header>
-  );
+  return(
+      <header className="header-container header">
+          <button onClick={showSideBar}>
+              <FontAwesomeIcon icon={faBars} />
+          </button>
+          {sideBar && <SideBar active={setSideBar} />}
+          <Link to='/'>
+              <img 
+                  src={logo}
+                  alt="Desenho de uma montanha, escrito embaixo 'Mão Terra Camping Store'"
+                  className="logo"    
+              />
+          </Link>
+          <div className="header__container__user">
+              <Link to='/cart'>
+                  <FontAwesomeIcon icon={faCartShopping} />
+              </Link>
+              <Link to='/user'>
+                  <FontAwesomeIcon icon={faUser} />
+              </Link>
+          </div>
+      </header>
+  )
 }

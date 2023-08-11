@@ -42,11 +42,13 @@ export default function Cart(){
         const novosProdutos = produtosEscolhidos.map((prod) => {
             if (prod.id === index && prod.quantidade > 1) {
                 return { ...prod, quantidade: prod.quantidade - 1 };
-            }
-            return prod;
+            } else if (prod.quantidade == 1 && prod.id == index){
+                return;
+            }          
+            return prod;  
         });
         
-        setProdutosEscolhidos(novosProdutos);
+        setProdutosEscolhidos(novosProdutos.filter(Boolean));
     }
 
     function apagarProduto(index: number) {
