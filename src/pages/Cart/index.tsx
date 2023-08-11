@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { faListUl, faUserLarge, faCreditCard, faCircleCheck, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
@@ -11,6 +11,14 @@ interface ProdutoEscolhido{
     categoria: string,
     quantidade: number,
     preco: number
+}
+
+interface Endereco {
+    cep: string;
+    logradouro: string;
+    bairro: string;
+    localidade: string;
+    uf: string;
 }
 
 export default function Cart(){
@@ -51,6 +59,55 @@ export default function Cart(){
         setProdutosEscolhidos(novosProdutos.filter(Boolean));
     }
 
+    const [cep, setCep] = useState<string>('');
+    const [placeholder, setPlaceholder] = useState<string>('CEP');
+    const [endereco, setEndereco] = useState<Endereco | null>(null);
+    const [enderecoEntrega, setEnderecoEntrega] = useState<string>('');
+    const [frete, setFrete] = useState<string | number>('');
+
+    const handleCepChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
+        setCep(event.target.value);
+    };
+
+    const handleMostrarClick = async () => {
+        if (cep.length != 8){
+            setCep('');
+            const newPlaceholder = 'Formato correto 00000-00';
+            setPlaceholder(newPlaceholder);
+        } else {
+            setFrete(0);
+            try {
+                const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+                const data = await response.json().then(function(data) {
+                    if (data.erro) {
+                        console.log('CEP não encontrado.');
+                        return;
+                    }
+                    setEndereco(data);
+                    setEnderecoEntrega(`${data?.logradouro},${data?.bairro},${data?.localidade},${data?.uf}`);
+                })
+              } catch (error) {
+                console.error('Erro ao buscar o CEP:', error);
+              }
+        }
+    };
+
+    const [pedidoFinalizado, setPedidoFinalizado] = useState<Boolean>(false);
+
+    useEffect(() => {
+        if (endereco && produtosEscolhidos.length > 0) {
+            setPedidoFinalizado(true);
+        } else {
+            setPedidoFinalizado(false);
+        }
+    }, [endereco, produtosEscolhidos]);
+
+    const [pedidoImedido, setPedidoImpedido] = useState<Boolean>(false);
+
+    function finalizarPedido(){
+        if (!endereco || produtosEscolhidos.length == 0) setPedidoImpedido(true);
+    }
+
     return(
         <main className="main-cart">
             <div className="progress-bar">
@@ -77,7 +134,7 @@ export default function Cart(){
                                 <div className="cart-product__content">
                                     <h2 className="subtitle">{produto.nome}</h2>
                                     <span className="label">{produto.categoria}</span>
-                                    <span className="label product-price">R$ {produto.preco}</span>
+                                    <span className="label product-price">{produto.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</span>
                                 </div>
                                 <div className="cart-product__actions">
                                     <button className="button trash" onClick={() => (apagarProduto(produto.id))}><FontAwesomeIcon icon={faTrashCan} /></button>
@@ -97,21 +154,33 @@ export default function Cart(){
                     <p>Frete para</p>
                     <div className="frete-container">
                         <div>
-                            <input type="text" placeholder="CEP" className="cep" minLength={8} maxLength={8} />
-                            <button className="button show-cep">Mostrar</button>
+                            <input 
+                                type="number" 
+                                placeholder={placeholder} 
+                                className="cep" 
+                                maxLength={8}
+                                value={cep}
+                                onChange={handleCepChange} 
+                            />
+                            <button className="button show-cep" onClick={handleMostrarClick}>Mostrar</button>
                         </div>
-                        <p className="show-address">Endereço: </p>
-                        <p className="show-price">Frete: R$ </p>
+                        <p className="show-address">Endereço: {enderecoEntrega}</p>
+                        <p className="show-price">Frete: {frete.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</p>
                     </div>
                 </div>
 
                 <div className="total-pedido">
                     <p className="subtitle">Total do pedido</p>
-                    <p className="subtitle total-price">R$ <span className="value">2598,00</span></p>
+                    <p className="subtitle total-price">
+                        <span className="value">
+                            {produtosEscolhidos.reduce((accumulator, produto) => accumulator + (produto.preco * produto.quantidade), 0)
+                            .toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}
+                        </span>
+                    </p>
                 </div>
 
-                <button className="button paragraph finish-btn">Finalizar pedido</button>
-                <p className="text-light subtitle error-msg">Pedido não enviado!</p>
+                <Link onClick={finalizarPedido} className="button paragraph finish-btn" to={pedidoFinalizado ? '/login' : ''}>Finalizar pedido</Link>
+                {pedidoImedido && <p className="text-light subtitle error-msg">Pedido não enviado!</p>}
             </section>
         </main>
     )
