@@ -1,0 +1,161 @@
+.progress-bar{
+  margin: 0 auto;
+  width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.progress-bar-icons{
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: space-between;
+  align-items: center;
+}
+
+.progress-bar-icons i{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.25rem;
+  color: var(--white);
+}
+
+.progress-bar-icons i .icon-active{
+  color: var(--primary);
+}
+
+.progress-bar-border{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+}
+
+.progress-bar-border div{
+  height: 10px;
+  background-color: var(--white);
+}
+
+.progress-bar-border .active-bar{
+  background-color: var(--primary);
+}
+
+.back-page {
+  top: 5.5rem;
+  left: -5rem;
+  position: absolute;
+}
+
+.back-icon{
+  font-size: 2rem;
+  color: var(--white);
+}
+
+.payment-section {
+  align-self: normal;
+  border-radius: 4px;
+  border: 1px solid var(--secondary, #8b6b57);
+  background: rgba(242, 242, 242, 0.9);
+  padding: 2.5rem 1rem;
+  display: flex;
+  gap: 1.5rem;
+  flex-direction: column;
+}
+
+.payment-section .subtitle {
+  color: var(--primary);
+  text-align: center;
+  font-weight: 500;
+}
+
+.accordion-body {
+  background: rgba(139, 107, 87, 0.10);
+  padding: 1rem 1.25rem;  
+}
+
+.form-payment{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-payment input, .form-payment select {
+    border: 1px solid var(--secondary);
+    height: 2.5rem;
+    padding: 0 1.5rem;
+    border-radius: 4px;
+    outline: none;
+    width: 100%;
+}
+
+select {
+  word-wrap: normal;
+}
+
+button, select {
+  text-transform: none;
+}
+
+.d-flex{
+  display: flex;
+}
+
+.w-50 {
+  width: 50%
+}
+
+.gap-3 {
+  gap: 1rem;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.qr-code {
+  max-width: 250px;
+}
+
+.label {
+  font-size: 0.75rem;
+  font-weight: 300;
+}
+
+.payment-section .button {
+  align-self: center;
+}
+
+.accordion-button{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  font-size: 1rem;
+  border: none;
+}
+
+.accordion-button.credito{
+  border-radius: 0.3rem 0.3rem 0 0;
+}
+
+.accordion-button.pix{
+  border-radius: 0 0 0.3rem 0.3rem;
+}
+
+.accordion-button.pix.open{
+  border-radius: 0;
+}
+
+.accordion-button.open{
+  background-color: var(--secondary);
+}
+
+.accordion-button.open p{
+  color: var(--white);
+}

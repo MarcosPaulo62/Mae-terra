@@ -28,10 +28,10 @@ export default function Header(){
                 />
             </Link>
             <div className="header__container__user">
-                <Link to='/carrinho'>
+                <Link to='/cart'>
                     <FontAwesomeIcon icon={faCartShopping} />
                 </Link>
-                <Link to='/'>
+                <Link to='/user'>
                     <FontAwesomeIcon icon={faUser} />
                 </Link>
             </div>
