@@ -3,6 +3,7 @@ import { useState } from "react";
 import "./style.css";
 import { Box } from "@mui/system";
 import { makeStyles } from "@mui/styles";
+
 const tabs = ["Cadastro", "Pedidos", "Desejos"];
 
 const useStyles = makeStyles(() => ({
@@ -48,6 +49,7 @@ export default function User() {
                 key={tab}
                 variant={tab === activeTab ? "contained" : "text"}
                 onClick={() => setActiveTab(tab)}
+                color={"primary"}
                 className={
                   tab === activeTab
                     ? classes.containedButton
