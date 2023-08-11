@@ -4,124 +4,124 @@
     "nome": "Mochila com armação interna",
     "tag": "Mochilas",
     "preco": 509.90,
-    "img": "mochila-cargueira-card.png"
+    "img": "https://i.imgur.com/vVoYWwn.png"
 },
 {
     "nome": "Mochila ultraleve",
     "tag": "Mochilas",
     "preco": 559.90,
-    "img": "mochila-cargueira-card.png"
+    "img": "https://i.imgur.com/vVoYWwn.png"
 },
 {
     "nome": "Mochila para expedições",
     "tag": "Mochilas",
     "preco": 489.90,
-    "img": "mochila-cargueira-crampon-77.png"
+    "img": "https://i.imgur.com/Bd992Qb.png"
 
 },
 {
     "nome": "Mochila para acampamento",
     "tag": "Mochilas",
     "preco": 659.90,
-    "img": "mochila-cargueira-crampon-77.png"
+    "img": "https://i.imgur.com/Bd992Qb.png"
 },
 {
     "nome": "Mochila impermeável",
     "tag": "Mochilas",
     "preco": 799.90,
-    "img": "mochila-cargueira-card.png"
+    "img": "https://i.imgur.com/vVoYWwn.png"
 },
 {
     "nome": "GPS de mão",
     "tag": "Aventura",
     "preco": 1469.90,
-    "img": "barraca-falcon-3.png"
+    "img": "https://i.imgur.com/AoyRgDL.png"
 
 },
 {
     "nome": "Kit suprimentos essenciais",
     "tag": "Aventura",
     "preco": 1469.90,
-    "img": "barraca-cota-1.png"
+    "img": "https://i.imgur.com/xuI5GrX.png"
 
 },
 {
     "nome": "Bastões de trekking",
     "tag": "Aventura",
     "preco": 359.90,
-    "img": "estacas.png"
+    "img": "https://i.imgur.com/ldKpH0S.png"
 },
 {
     "nome": "Faca tática",
     "tag": "Aventura",
     "preco": 109.90,
-    "img": "estacas.png"
+    "img": "https://i.imgur.com/ldKpH0S.png"
 },
 {
     "nome": "Lanterna recarregável",
     "tag": "Aventura",
     "preco": 79.90,
-    "img": "barraca-cobra-4.png"
+    "img": "https://i.imgur.com/A2ZzkFC.png"
 },
 {
     "nome": "Barraca de camping",
     "tag": "Camping",
     "preco": 789.90,
-    "img": "barraca-cobra-4.png"
+    "img": "https://i.imgur.com/A2ZzkFC.png"
 },
 {
     "nome": "Saco de dormir",
     "tag": "Camping",
     "preco": 219.90,
-    "img": "saco-de-dormir.png"
+    "img": "https://i.imgur.com/6J5XhuH.png"
 },
 {
     "nome": "Canivete suíço",
     "tag": "Camping",
     "preco": 79.90,
-    "img": "estacas.png"
+    "img": "https://i.imgur.com/ldKpH0S.png"
 },
 {
     "nome": "Isolante térmico",
     "tag": "Camping",
     "preco": 39.90,
-    "img": "anorak-tradicional.png"
+    "img": "https://i.imgur.com/pQJMRX5.png"
 },
 {
     "nome": "Fogão de camping",
     "tag": "Camping",
     "preco": 189.90,
-    "img": "barraca-cota-1.png"
+    "img": "https://i.imgur.com/xuI5GrX.png"
 },
 {
     "nome": "Botas de trilha impermeáveis",
     "tag": "Tenis",
     "preco": 199.90,
-    "img": "anorak-tradicional.png"
+    "img": "https://i.imgur.com/pQJMRX5.png"
 },
 {
     "nome": "Sapatilha de água",
     "tag": "Tenis",
     "preco": 129.90,
-    "img": "anorak-tradicional.png"
+    "img": "https://i.imgur.com/pQJMRX5.png"
 },
 {
     "nome": "Sandálias esportivas",
     "tag": "Tenis",
     "preco": 139.90,
-    "img": "saco-de-dormir.png"
+    "img": "https://i.imgur.com/6J5XhuH.png"
 },
 {
     "nome": "Meias térmicas",
     "tag": "Tenis",
     "preco": 59.90,
-    "img": "anorak-tradicional.png"
+    "img": "https://i.imgur.com/AoyRgDL.png"
 },
 {
     "nome": "Calçados de neoprene",
     "tag": "Tenis",
     "preco": 219.90,
-    "img": "saco-de-dormir.png"
+    "img": "https://i.imgur.com/6J5XhuH.png"
 }
     ]
 }
