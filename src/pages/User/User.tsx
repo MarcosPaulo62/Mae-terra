@@ -1,7 +1,7 @@
 import { Typography, Button, TextField } from "@mui/material";
 import { useState } from "react";
 import "./style.css";
-import { Box, display } from "@mui/system";
+import { Box } from "@mui/system";
 import { makeStyles } from "@mui/styles";
 const tabs = ["Cadastro", "Pedidos", "Desejos"];
 
