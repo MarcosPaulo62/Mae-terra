@@ -9,7 +9,7 @@ import { CardProduct } from "../../components/CardProduct";
 import { Product } from "../../models/product";
 import { getProducts } from "../../api/get-products";
 
-interface avaliacao{
+export interface avaliacao{
     mensagem: string,
     nome: string,
 }
@@ -88,7 +88,8 @@ export default function Home() {
           </Carousel>
         </div>
         <button onClick={showModal}>Avalie-nos!</button>
-        {/* {modal && <ModalAvaliacao active={setModal} />} */}
+        {modal && <ModalAvaliacao active={setModal} 
+        onAddAvaliacao={(avaliacao) => setAvaliacoes(prevState => [...prevState, avaliacao])} />}
       </section>
     </main>
   );
