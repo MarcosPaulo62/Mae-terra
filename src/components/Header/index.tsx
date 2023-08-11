@@ -28,7 +28,7 @@ export default function Header(){
                 />
             </Link>
             <div className="header__container__user">
-                <Link to='/'>
+                <Link to='/carrinho'>
                     <FontAwesomeIcon icon={faCartShopping} />
                 </Link>
                 <Link to='/'>

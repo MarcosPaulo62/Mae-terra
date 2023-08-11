@@ -5,6 +5,7 @@ import { CardProduct } from "./components/CardProduct";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home/Home";
+import Cart from "./pages/Cart";
 
 
 
@@ -16,6 +17,7 @@ function App() {
           <Header />
           <Routes>
             {<Route path='/' element={<Home />} />}
+            {<Route path='/carrinho' element={<Cart />} />}
             {/* <Route path='/*' element={<NotFound />} /> */}
           </Routes>
         </BrowserRouter>
