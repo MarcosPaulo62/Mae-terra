@@ -1,7 +1,7 @@
 import { Typography, Button, TextField } from "@mui/material";
 import { useState } from "react";
 import "./style.css";
-import { Box } from "@mui/system";
+import { Box, display } from "@mui/system";
 import { makeStyles } from "@mui/styles";
 const tabs = ["Cadastro", "Pedidos", "Desejos"];
 
@@ -58,57 +58,69 @@ export default function User() {
               </Button>
             ))}
           </div>
-          <div className="form-user">
-            <h2 className="title-form">Dados pessoais</h2>
-            <Box>
-              <Typography>Login</Typography>
-              <TextField
-                id="outlined-basic"
-                variant="outlined"
-                defaultValue="anamorango@gmail.com"
-                size="small"
-                disabled={state}
-              />
-            </Box>
+          {activeTab === "Cadastro" ? (
+            <div className="form-user">
+              <h2 className="title-form">Dados pessoais</h2>
+              <Box>
+                <Typography>Login</Typography>
+                <TextField
+                  id="outlined-basic"
+                  variant="outlined"
+                  defaultValue="anamorango@gmail.com"
+                  size="small"
+                  disabled={state}
+                />
+              </Box>
 
-            <Box>
-              <Typography>Nome de usuário</Typography>
-              <TextField
-                id="outlined-basic"
-                variant="outlined"
-                disabled={state}
-                defaultValue="Ana Banana"
-                size="small"
-              />
-            </Box>
+              <Box>
+                <Typography>Nome de usuário</Typography>
+                <TextField
+                  id="outlined-basic"
+                  variant="outlined"
+                  disabled={state}
+                  defaultValue="Ana Banana"
+                  size="small"
+                />
+              </Box>
 
-            <Box>
-              <Typography>Telefone</Typography>
-              <TextField
-                id="outlined-basic"
-                variant="outlined"
-                disabled={state}
-                defaultValue="(11) 7070-7070"
-                size="small"
-              />
-            </Box>
+              <Box>
+                <Typography>Telefone</Typography>
+                <TextField
+                  id="outlined-basic"
+                  variant="outlined"
+                  disabled={state}
+                  defaultValue="(11) 7070-7070"
+                  size="small"
+                />
+              </Box>
 
-            <Box>
-              <Typography>Senha</Typography>
-              <TextField
-                id="outlined-basic"
-                variant="outlined"
-                type="password"
-                defaultValue="1234"
-                size="small"
-                disabled={state}
-              />
-            </Box>
+              <Box>
+                <Typography>Senha</Typography>
+                <TextField
+                  id="outlined-basic"
+                  variant="outlined"
+                  type="password"
+                  defaultValue="1234"
+                  size="small"
+                  disabled={state}
+                />
+              </Box>
 
-            <button className="btn btn-add" onClick={() => readonly()}>
-              {changeData}
-            </button>
-          </div>
+              <button className="btn btn-add" onClick={() => readonly()}>
+                {changeData}
+              </button>
+            </div>
+          ) : (
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                marginTop: "50px",
+              }}
+            >
+              <Typography>Página em construção :D</Typography>
+            </Box>
+          )}
         </div>
       </main>
     </>
