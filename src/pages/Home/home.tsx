@@ -9,13 +9,13 @@ import { CardProduct } from "../../components/CardProduct";
 import { Product } from "../../models/product";
 import { getProducts } from "../../api/get-products";
 
-interface avaliacao{
-    mensagem: string,
-    nome: string,
+interface avaliacao {
+  mensagem: string;
+  nome: string;
 }
 
 export default function Home() {
-  const [searchText, setSearchText] = useState('')
+  const [searchText, setSearchText] = useState("");
   const [products, setProducts] = useState<Product[]>([]);
 
   const [modal, setModal] = useState<boolean>(false);
@@ -55,17 +55,23 @@ export default function Home() {
         </div>
       </section>
       <section className="search-container">
-        <input type="text" placeholder="Pesquise um produto" onChange={(e) => setSearchText(e.target.value)} />
+        <input
+          type="text"
+          placeholder="Pesquise um produto"
+          onChange={(e) => setSearchText(e.target.value)}
+        />
         <button>
           <FontAwesomeIcon icon={faMagnifyingGlass} />
         </button>
       </section>
       <section className="product-section">
         {products
-          .filter((product) => product.nome.toLowerCase().includes(searchText.toLowerCase()))
+          .filter((product) =>
+            product.nome.toLowerCase().includes(searchText.toLowerCase())
+          )
           .map((product) => (
-          <CardProduct key={product.id} product={product} />
-        ))}
+            <CardProduct key={product.id} product={product} />
+          ))}
       </section>
       <section className="avaliacoes">
         <h2>Avaliações</h2>
