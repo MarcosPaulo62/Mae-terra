@@ -48,7 +48,7 @@ export default function Cart(){
             return prod;  
         });
         
-        setProdutosEscolhidos(novosProdutos.filter(Boolean));
+        setProdutosEscolhidos(novosProdutos.filter(Boolean) as ProdutoEscolhido[]);
     }
 
     function apagarProduto(index: number) {
@@ -58,7 +58,7 @@ export default function Cart(){
             } 
         });
         
-        setProdutosEscolhidos(novosProdutos.filter(Boolean));
+        setProdutosEscolhidos(novosProdutos.filter(Boolean) as ProdutoEscolhido[]);
     }
 
     const [cep, setCep] = useState<string>('');
@@ -80,7 +80,7 @@ export default function Cart(){
             setFrete(0);
             try {
                 const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
-                const data = await response.json().then(function(data) {
+                await response.json().then(function(data) {
                     if (data.erro) {
                         console.log('CEP não encontrado.');
                         return;

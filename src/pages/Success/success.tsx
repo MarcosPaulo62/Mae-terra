@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { faListUl, faUserLarge, faCreditCard, faCircleCheck, faCircleLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";

@@ -37,7 +37,7 @@ export default function Category() {
     <>
       <main className="category">
         <div className="iconTag">
-          <FontAwesomeIcon icon={icons[tag]} />
+          <FontAwesomeIcon icon={icons[tag as keyof typeof icons]} />
           <h1 className='titleCategory'>{tag}</h1>
         </div>
         <section className="search-container">
