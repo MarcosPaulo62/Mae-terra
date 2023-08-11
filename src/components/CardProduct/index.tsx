@@ -1,5 +1,3 @@
-import { Button } from "@mui/material";
-import React from "react";
 import { Product } from "../../models/product";
 import "./style.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
