@@ -15,7 +15,7 @@
 </p>
 
 <p align="center">
-  <a href="https://ignite-todo-silk.vercel.app/" target="_blank">➡️ Acesse o deploy!</a>
+  <a href="https://mae-terra-react.vercel.app/" target="_blank">➡️ Acesse o deploy!</a>
 </p>
 
 ## 🚀 Tecnologias
