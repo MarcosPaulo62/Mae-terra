@@ -10,4 +10,11 @@ describe("Home", () => {
     expect(screen.getByText("Compre em até 12x sem juros")).toBeInTheDocument();
     expect(screen.getByText("Avaliações")).toBeInTheDocument();
   });
+
+  test("Deve renderizar 1 input e 1 button", () => {
+    render(<Home />);
+
+    expect(screen.getByTestId("search-input")).toBeInTheDocument();
+    expect(screen.getByTestId("search-button")).toBeInTheDocument();
+  });
 });

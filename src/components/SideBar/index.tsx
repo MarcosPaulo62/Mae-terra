@@ -19,11 +19,11 @@ export default function SideBar({ active }: SideBarProps){
                     <button onClick={closeSideBar}><FontAwesomeIcon icon={faXmark} /></button>
                 </div>
                 <div className="links">
-                    <Link to='/'>Home</Link>
-                    <Link to='/category/aventura'>Aventura</Link>
-                    <Link to='/category/camping'>Camping</Link>
-                    <Link to='/category/mochilas'>Mochilas</Link>
-                    <Link to='/category/tenis'>Tênis</Link>
+                    <Link data-testid="homepage-link" to='/'>Home</Link>
+                    <Link data-testid="aventure-link" to='/category/aventura'>Aventura</Link>
+                    <Link data-testid="camping-link" to='/category/camping'>Camping</Link>
+                    <Link data-testid="backpacks-link" to='/category/mochilas'>Mochilas</Link>
+                    <Link data-testid="shoes-link" to='/category/tenis'>Tênis</Link>
                 </div>            
             </div>
         </div>

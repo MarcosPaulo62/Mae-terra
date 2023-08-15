@@ -98,7 +98,7 @@ export default function Payment(){
               </div>
             </div>
           </div>
-          <Link to='/success' className="button">Efetuar compra</Link>
+          <Link to='/success' className="button" data-testid="finally-link">Efetuar compra</Link>
         </section>
         
     </main>

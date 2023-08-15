@@ -59,8 +59,9 @@ export default function Home() {
           type="text"
           placeholder="Pesquise um produto"
           onChange={(e) => setSearchText(e.target.value)}
+          data-testid="search-input"
         />
-        <button>
+        <button data-testid="search-button">
           <FontAwesomeIcon icon={faMagnifyingGlass} />
         </button>
       </section>

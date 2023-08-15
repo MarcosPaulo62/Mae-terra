@@ -48,7 +48,7 @@ export default function Success(){
               <p className="paragraph">Clique <a href="#" className="rastrear">aqui</a> para rastrear o pedido!</p>
             </div>
           </div>
-          <Link to='/' className="button">Voltar à página inicial</Link>
+          <Link to='/' className="button" data-testid="homepage-link">Voltar à página inicial</Link>
         </section>
         
     </main>

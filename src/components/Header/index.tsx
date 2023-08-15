@@ -18,7 +18,7 @@ export default function Header() {
         <FontAwesomeIcon icon={faBars} />
       </button>
       {sideBar && <SideBar active={setSideBar} />}
-      <Link to="/">
+      <Link to="/" data-testid="homepage-link">
         <img
           src={logo}
           alt="Desenho de uma montanha, escrito embaixo 'Mão Terra Camping Store'"
@@ -26,10 +26,10 @@ export default function Header() {
         />
       </Link>
       <div className="header__container__user">
-        <Link to="/cart">
+        <Link to="/cart" data-testid="cart-link">
           <FontAwesomeIcon icon={faCartShopping} />
         </Link>
-        <Link to="/user">
+        <Link to="/user" data-testid="user-link">
           <FontAwesomeIcon icon={faUser} />
         </Link>
       </div>

@@ -41,8 +41,13 @@ export default function Category() {
           <h1 className='titleCategory'>{tag}</h1>
         </div>
         <section className="search-container">
-          <input type="text" placeholder="Pesquise um produto" onChange={(e) => setSearchText(e.target.value)} />
-          <button>
+          <input 
+            type="text" 
+            placeholder="Pesquise um produto" 
+            onChange={(e) => setSearchText(e.target.value)} 
+            data-testid="search-input"
+          />
+          <button data-testid="search-input">
             <FontAwesomeIcon icon={faMagnifyingGlass} />
           </button>
         </section>

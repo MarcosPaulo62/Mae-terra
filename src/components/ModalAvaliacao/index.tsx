@@ -36,7 +36,7 @@ export default function ModalAvaliacao({ active, onAddAvaliacao }: ModalProps){
             <div className="modal-avaliacao-content">
                 <div className="modal-header">
                     <h1>Nova mensagem</h1>
-                    <button onClick={closeModal}>
+                    <button onClick={closeModal} data-testid="close-button">
                         <FontAwesomeIcon icon={faXmark} />
                     </button>
                 </div>
@@ -45,18 +45,30 @@ export default function ModalAvaliacao({ active, onAddAvaliacao }: ModalProps){
                         <div className="form">
                             <div>
                                 <label htmlFor="nome">Seu nome</label>
-                                <input type="text" id="nome" {...register("nome")} required></input>
+                                <input 
+                                    type="text" 
+                                    id="nome" 
+                                    {...register("nome")} 
+                                    required 
+                                    data-testid="nome-input"
+                                ></input>
                             </div>
                             <div>
                                 <label htmlFor="mensagem">Avaliação</label>
-                                <textarea id="mensagem" maxLength={100} {...register("mensagem")} required></textarea>
+                                <textarea 
+                                    id="mensagem" 
+                                    maxLength={100} 
+                                    {...register("mensagem")} 
+                                    required 
+                                    data-testid="avaliacao-textarea"
+                                ></textarea>
                             </div>
                         </div>
                         
                 
                         <div className="modal-footer">
-                            <button type="button" onClick={closeModal}>Fechar</button>
-                            <button type="submit" className="enviar-modal">Avaliar!</button>
+                            <button type="button" onClick={closeModal} data-testid="fechar-button">Fechar</button>
+                            <button type="submit" className="enviar-modal" data-testid="avaliar-button">Avaliar!</button>
                         </div>
                     </form>   
                 </div>             
