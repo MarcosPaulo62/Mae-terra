@@ -38,6 +38,12 @@ npm i
 npm run dev
 ```
 
+2. Comandos necessários para executar os testes:
+
+```
+npm test
+```
+
 > Particularidades do projeto. Dependência externa.
 
 ## 💻 Sobre o Projeto
